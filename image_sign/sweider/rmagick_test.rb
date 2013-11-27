@@ -42,7 +42,6 @@ imgs = []
 
 Dir.chdir(options[:work_directory])
 Dir.foreach(Dir.pwd) do |file|
-   p file.class
    next if file == "." || file == ".."
    imgs << ImagesList.new(file) if !file.split(".")[-1].match("^gif$|^jpg$|^png$").nil?
 end
